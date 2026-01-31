@@ -43,13 +43,3 @@ resource "aws_lb_listener" "http" {
     target_group_arn = aws_lb_target_group.this.arn
   }
 }
-<<<<<<< HEAD
-
-# Attachment: engancha tu EC2 App al target group
-resource "aws_lb_target_group_attachment" "app" {
-  target_group_arn = aws_lb_target_group.this.arn
-  target_id        = var.target_instance_id
-  port             = 80
-}
-=======
->>>>>>> rehacer-criterio-2
