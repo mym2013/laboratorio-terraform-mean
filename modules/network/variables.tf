@@ -1,19 +1,24 @@
 variable "project_name" {
-  description = "Nombre del proyecto"
+  description = "Nombre del proyecto (prefijo de naming/tags)"
   type        = string
 }
 
 variable "environment" {
-  description = "Entorno"
+  description = "Entorno (dev/stage/prod)"
   type        = string
 }
 
-variable "vpc_id" {
-  description = "ID de la VPC"
+variable "vpc_cidr" {
+  description = "CIDR de la VPC"
   type        = string
 }
 
-variable "my_ip" {
-  description = "IP publica permitida para SSH"
-  type        = string
+variable "public_subnets_cidr" {
+  description = "Lista de CIDRs para las subnets públicas"
+  type        = list(string)
+}
+
+variable "availability_zones" {
+  description = "Lista de AZs donde crear las subnets públicas"
+  type        = list(string)
 }
