@@ -1,25 +1,24 @@
-variable "name" {
-  description = "Nombre base para el Application Load Balancer"
+variable "project_name" {
+  description = "Nombre del proyecto"
   type        = string
-  default     = "mean-alb"
+}
+
+variable "environment" {
+  description = "Entorno (dev, qa, prod)"
+  type        = string
 }
 
 variable "vpc_id" {
-  description = "ID de la VPC donde se despliega el ALB"
+  description = "ID de la VPC"
   type        = string
 }
 
-variable "public_subnet_ids" {
-  description = "Lista de subnets publicas donde se despliega el ALB"
+variable "public_subnets" {
+  description = "Subnets públicas para el ALB"
   type        = list(string)
 }
 
-variable "target_instance_id" {
-  description = "ID de la instancia EC2 de la aplicacion"
-  type        = string
-}
-
-variable "app_sg_id" {
-  description = "Security Group ID de la instancia de la aplicacion"
+variable "alb_security_group_id" {
+  description = "Security Group del ALB"
   type        = string
 }

@@ -1,24 +1,24 @@
- 
 variable "project_name" {
+  description = "Nombre del proyecto (prefijo de naming/tags)"
   type        = string
-  description = "Nombre base para tags"
-  default     = "mean-terraform"
+}
+
+variable "environment" {
+  description = "Entorno (dev/stage/prod)"
+  type        = string
 }
 
 variable "vpc_cidr" {
-  type        = string
   description = "CIDR de la VPC"
-  default     = "10.0.0.0/16"
+  type        = string
 }
 
-variable "public_subnet_cidr" {
-  type        = string
-  description = "CIDR subnet publica"
-  default     = "10.0.1.0/24"
+variable "public_subnets_cidr" {
+  description = "Lista de CIDRs para las subnets públicas"
+  type        = list(string)
 }
 
-variable "az" {
-  type        = string
-  description = "Availability Zone"
-  default     = "us-east-1a"
+variable "availability_zones" {
+  description = "Lista de AZs donde crear las subnets públicas"
+  type        = list(string)
 }

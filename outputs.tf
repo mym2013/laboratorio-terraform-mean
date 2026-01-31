@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # IP pública de la instancia Web
 output "web_public_ip" {
   description = "IP pública de la instancia Web"
@@ -26,4 +27,16 @@ output "alb_dns_name" {
 output "nat_gateway_public_ip" {
   description = "IP pública del NAT Gateway"
   value       = module.network.nat_public_ip
+=======
+output "vpc_id" {
+  value = module.network.vpc_id
+}
+
+output "public_subnets" {
+  value = module.network.public_subnets
+}
+
+output "alb_dns_name" {
+  value = module.alb.alb_dns_name
+>>>>>>> rehacer-criterio-2
 }
